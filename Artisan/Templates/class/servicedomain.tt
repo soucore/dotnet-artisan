@@ -1,0 +1,40 @@
+using {[namespace]}.Domain.Entities;
+using {[namespace]}.Domain.Interfaces.Repository;
+using {[namespace]}.Domain.Interfaces.Service;
+using {[namespace]}.Domain.Validations;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace {[namespace]}.Domain.Services
+{
+    public class {[class]}Service : I{[class]}Service
+    {
+        private readonly I{[class]}Repository _{[varclass]}Repository;
+
+        public {[class]}Service(I{[class]}Repository {[varclass]}Repository)
+        {
+            _{[varclass]}Repository = {[varclass]}Repository;
+        }
+
+        public {[class]} Create({[class]} {[varclass]})
+        {
+            return _{[varclass]}Repository.Create({[varclass]});
+        }
+
+        public Constante Update(Constante constante)
+        {
+            return _{[varclass]}Repository.Update({[varclass]});
+        }
+
+        public IEnumerable<{[class]}> All()
+        {
+            return _{[varclass]}Repository.All();
+        }
+
+        public Constante FindById(int id)
+        {
+            return _{[varclass]}Repository.FindById(id);
+        }
+    }
+}

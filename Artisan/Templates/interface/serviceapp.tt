@@ -1,0 +1,17 @@
+using {[namespace]}.Application.ViewModels;
+using System;
+using System.Collections.Generic;
+
+namespace {[namespace]}.Application.Interfaces
+{
+    public interface I{[class]}AppService : IDisposable
+    {
+        IEnumerable<{[class]}ViewModel> All();
+
+        {[class]}ViewModel FindById(int id);
+
+        {[class]}ViewModel Create({[class]}ViewModel model);
+
+        {[class]}ViewModel Update({[class]}ViewModel model);
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Artisan": {
+      "commandName": "Project",
+      "commandLineArgs": "make:repository User --force"
+    }
+  }
+}

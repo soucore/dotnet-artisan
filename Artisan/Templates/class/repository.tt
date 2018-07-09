@@ -1,0 +1,14 @@
+using {[namespace]}.Domain.Entities;
+using {[namespace]}.Domain.Interfaces.Repository;
+using {[namespace]}.Infra.Data.Context;
+
+namespace {[namespace]}.Infra.Data.Repository
+{
+    public class {[class]}Repository : Repository<{[class]}>, I{[class]}Repository
+    {
+        public {[class]}Repository(DataContext context)
+            : base(context)
+        {
+        }
+    }
+}

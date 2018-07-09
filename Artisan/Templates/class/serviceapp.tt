@@ -1,0 +1,69 @@
+using AutoMapper;
+using System;
+using System.Collections.Generic;
+using {[namespace]}.Application.Interfaces;
+using {[namespace]}.Application.ViewModel;
+using {[namespace]}.Domain.Models;
+using {[namespace]}.Domain.Interfaces.Services;
+using {[namespace]}.Infra.Data.Interfaces;
+
+namespace {[namespace]}.Application
+{
+    public class {[class]}AppService : ApplicationAppService, I{[class]}AppService
+    {
+        private readonly I{[class]}Service _{[varclass]}Service;
+
+        public {[class]}AppService(IUnitOfWork uow, I{[class]}Service {[varclass]}Service)
+            : base(uow)
+        {
+            _{[varclass]}Service = {[varclass]}Service;
+        }
+
+        public {[class]}ViewModel Create({[class]}ViewModel {[varclass]}ViewModel)
+        {
+            var model = Mapper.Map<{[class]}ViewModel, {[class]}>({[varclass]}ViewModel);
+
+            BeginTransaction();
+
+            var result = _{[varclass]}Service.Create(model);
+
+            viewModel = Mapper.Map<{[class]}, {[class]}ViewModel>(result);
+
+            Commit();
+
+            return viewModel;
+        }
+
+        public {[class]}ViewModel Update({[class]}ViewModel {[varclass]}ViewModel)
+        {
+            var model = Mapper.Map<{[class]}ViewModel, {[class]}>({[varclass]}ViewModel);
+
+            BeginTransaction();
+            var result = _cestaoService.Update(model);
+
+            viewModel = Mapper.Map<{[class]}, {[class]}ViewModel>(result);
+
+            Commit();
+
+            return viewModel;
+        }
+
+        public {[class]}ViewModel FindById(int id)
+        {
+            return Mapper.Map<{[class]}, {[class]}ViewModel>(_{[varclass]}Service.FindById(id));
+        }
+
+        public IEnumerable<{[class]}ViewModel> All()
+        {
+            return Mapper.Map<IEnumerable<{[class]}>, IEnumerable<{[class]}ViewModel>>(_{[varclass]}Service.All());
+        }
+
+        public void Dispose()
+        {
+            _{[varclass]}Service.Dispose();
+            GC.SuppressFinalize(this);
+        }
+
+        
+    }
+}

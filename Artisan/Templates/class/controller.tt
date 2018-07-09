@@ -1,0 +1,54 @@
+using {[namespace]}.Application.Interface;
+using {[namespace]}.Application.ViewModel;
+using System;
+using System.Net;
+using System.Web.Mvc;
+
+namespace {[namespace]}.Presentation.Controllers
+{
+    public class {[class]}Controller
+    {
+        private readonly I{[class]}AppService _{[varclass]}AppService;
+
+        public {[class]}Controller(I{[class]}AppService {[varclass]}AppService)
+        {
+            _{[varclass]}AppService = {[varclass]}AppService;
+        }
+
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return View(_{[varclass]}AppService.All());
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+           return View();
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int Id)
+        {
+            return View(_{[varclass]}AppService.FindById(Id));
+        }
+
+        [HttpPost]
+        public RedirectResult Store()
+        {
+            return Redirect("Index");
+        }
+
+        [HttpPut]
+        public RedirectResult Update()
+        {
+            return Redirect("Index");
+        }
+
+        [HttpDelete]
+        public RedirectResult Delete(int id)
+        {
+            return Redirect("Index");
+        }
+    }
+}

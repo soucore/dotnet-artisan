@@ -1,0 +1,7 @@
+namespace {[namespace]}.Domain
+{
+    public class {[class]}Validator
+    {
+        public int {[class]}Id { get; set;}
+    }
+}

@@ -1,0 +1,17 @@
+using {[namespace]}.Domain.Models;
+using System;
+using System.Collections.Generic;
+
+namespace {[namespace]}.Domain.Interfaces.Service
+{
+    public interface I{[class]}Service : IDisposable
+    {
+        IEnumerable<{[class]}> All();
+
+        Corrida FindById(int id);
+
+        Corrida Create({[class]} {[varclass]});
+
+        Corrida Update({[class]} {[varclass]});
+    }
+}

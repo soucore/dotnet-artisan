@@ -1,0 +1,8 @@
+using {[namespace]}.Domain.Models;
+
+namespace {[namespace]}.Domain.Interfaces.Repository
+{
+    public interface I{[class]}Repository : IRepository<{[class]}>
+    {
+    }
+}

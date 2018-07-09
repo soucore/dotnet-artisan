@@ -1,0 +1,13 @@
+using {[namespace]}.Domain.Entities;
+
+namespace {[namespace]}.Infra.Data.ModelConfig
+{
+    public class {[class]}Configuration : BaseConfig<{[class]}>
+    {
+        public {[class]}Configuration()
+        {
+            HasKey(x => x.{[class]}Id);
+            ToTable("{[class]}");
+        }
+    }
+}

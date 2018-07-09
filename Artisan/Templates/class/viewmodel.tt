@@ -1,0 +1,11 @@
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace {[namespace]}.Domain
+{
+    public class {[class]}ViewModel
+    {
+        [Key]
+        public int {[class]}Id { get; set;}
+    }
+}
